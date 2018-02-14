@@ -19,7 +19,7 @@ async def on_ready():
 @bot.command()
 async def invite(ctx):
     """Hit me up in your sever!"""
-    await ctx.send("Lemme join that sever:https://discordapp.com/api/oauth2/authorize?client_id=413122600848326676&permissions=0&scope=bot ")
+    await ctx.send("Lemme join that sever:https://discordapp.com/api/oauth2/authorize?client_id=413122600848326676&permissions=0&scope=bot")
           
 
 @bot.command()
