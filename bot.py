@@ -15,15 +15,7 @@ from contextlib import redirect_stdout
 from discord.ext import commands
 import json
 from discord.ext import commands
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('='),description="Zerkun Design's Discord bot.\n\nHelp Commands",owner_id=277981712989028353)
-
-
-def cleanup_code(content):
-    # remove ```py\n```
-    if content.startswith('```') and content.endswith('```'):
-        return '\n'.join(content.split('\n')[1:-1])
-
-    return content.strip('` \n')
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="TheEmperor™'s Discord bot.\n\nHelp Commands",owner_id=250674147980607488)
 
 
 @bot.event
