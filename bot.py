@@ -28,6 +28,6 @@ async def support(ctx):
   await ctx.send("Join my support server: https://discord.gg/WewwYV5")
   
   
-  if not os.environ.get('TOKEN'):
+if not os.environ.get('TOKEN'):
     print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
