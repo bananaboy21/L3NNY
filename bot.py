@@ -38,6 +38,23 @@ async def invite(ctx):
     await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=0&scope=bot")
     
     
+    @bot.command()
+@commands.has_permissions(manage_messages = True)
+async def purge(ctx, num: int):
+    """Deletes msgs. _purge [how many msgs].""" 
+    try: 
+        if num is None:
+            await ctx.send("How many messages would you like me to delete? Usage: _purge [number of msgs]")
+        else:
+            try:
+                float(num)
+            except ValueError:
+                return await ctx.send("The number is invalid. Make sure it is valid! Usage: *purge [number of msgs]")
+            await ctx.channel.purge(limit=num+1)
+            await ctx.send("Done :ok_hand:")
+    except discord.Forbidden:
+        await ctx.send("Unable to purge. I don't have Manage Messages permission.")
+    
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
