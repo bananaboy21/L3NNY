@@ -67,10 +67,10 @@ async def say(ctx, *, message:str):
     await ctx.send(message)
     
     
-    @bot.command()
+@bot.command()
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, user: discord.Member):
-    """Kicks a member into the world outside your server."""
+    """Kicks a member."""
     await ctx.send(f"The administrator is putting on his boot. He puts in on and kicks {user.name} in the ass. {user.name} has been kicked.")
     await user.kick()
     
