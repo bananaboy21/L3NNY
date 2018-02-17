@@ -23,9 +23,9 @@ async def on_ready():
     print('Bot is online, and ready to ROLL!')
     while True:
         await bot.change_presence(game=discord.Game(name=f"with {len(bot.guilds)} servers!"))
-        await asyncio.sleep(15)
+        await asyncio.sleep(10)
         await bot.change_presence(game=discord.Game(name="_help"))
-        await asyncio.sleep(15)
+        await asyncio.sleep(10)
     
     
 @bot.command()
@@ -59,6 +59,12 @@ async def purge(ctx, num: int):
     except discord.Forbidden:
         await ctx.send("Unable to purge. I don't have Manage Messages permission.")
 
+        
+ @bot.command()
+async def say(ctx, *, message:str):
+    """Speak as me!"""
+    await ctx.message.delete()
+    await ctx.send(message)
     
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
