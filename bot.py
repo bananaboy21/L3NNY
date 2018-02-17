@@ -60,11 +60,19 @@ async def purge(ctx, num: int):
         await ctx.send("Unable to purge. I don't have Manage Messages permission.")
 
         
- @bot.command()
+@bot.command()
 async def say(ctx, *, message:str):
     """Speak as me!"""
     await ctx.message.delete()
     await ctx.send(message)
+    
+    
+    @bot.command()
+@commands.has_permissions(kick_members = True)
+async def kick(ctx, user: discord.Member):
+    """Kicks a member into the world outside your server."""
+    await ctx.send(f"The administrator is putting on his boot. He puts in on and kicks {user.name} in the ass. {user.name} has been kicked.")
+    await user.kick()
     
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
