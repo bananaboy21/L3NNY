@@ -32,6 +32,11 @@ async def ping(ctx):
     em.description = f"{bot.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
     
+@bot.command()
+async def invite(ctx):
+    """lets me join ur clUb"""
+    await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=0&scope=bot")
+    
     
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
