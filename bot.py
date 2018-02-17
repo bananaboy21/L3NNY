@@ -45,7 +45,7 @@ async def invite(ctx):
 @bot.command()
 @commands.has_permissions(manage_messages = True)
 async def purge(ctx, num: int):
-    """Deletes msgs. _purge [how many msgs].""" 
+    """Deletes msgs. Usage: _purge [number]""" 
     try: 
         if num is None:
             await ctx.send("How many messages would you like me to delete? Usage: _purge [number of msgs]")
