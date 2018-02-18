@@ -26,8 +26,6 @@ async def on_ready():
         await asyncio.sleep(10)
         await bot.change_presence(game=discord.Game(name="_help"))
         await asyncio.sleep(10)
-        await bot.change_presence(game=discord.Game(name="with yo mama"))
-        await asyncio.sleep(3)
     
 @bot.command()
 async def server(ctx):
@@ -80,7 +78,14 @@ async def kick(ctx, user: discord.Member):
     await ctx.send(f"The administrator is putting on his boot. The Administrator puts in on and kicks **{user.name}** in his rear end.. **{user.name}** has been kicked.")
     await user.kick()    
     
-
+   
+@bot.command()
+@commands.has_permissions(ban_members = True)
+async def ban(ctx, user: discord.Member):
+    """Bans a member."""
+    await ctx.send(f"The admministrator is getting his hammer. He takes his hammer and swings it at **{user.name}** in the back...Ouch! {user.name} has been banned.")
+    await user.ban()
+   
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
