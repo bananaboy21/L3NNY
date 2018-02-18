@@ -46,6 +46,10 @@ async def invite(ctx):
     await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=0&scope=bot")
     
     
+ @bot.command()
+async def upvote(ctx):
+    await ctx.sned (" Upvote me here! https://discordbots.org/bot/414456650519412747") 
+    
 @bot.command()
 @commands.has_permissions(manage_messages = True)
 async def purge(ctx, num: int):
