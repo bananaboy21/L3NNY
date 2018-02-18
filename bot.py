@@ -80,6 +80,29 @@ async def kick(ctx, user: discord.Member):
     await ctx.send(f"The administrator is putting on his boot. The Administrator puts in on and kicks **{user.name}** in the ass. **{user.name}** has been kicked.")
     await user.kick()
     
+    
+@bot.command()
+@commands.has_permissions(ban_members=True)
+async def mute(ctx, user: discord.Member, time=None):
+    ''"Mutes someone Usage: _mute [user] [time in mins]'''
+    try:
+        if time is None:
+            await ctx.channel.set_permissions(user, send_messages=False)
+            await ctx.send(f"{user.mention} is now forced to shut up. :zipper_mouth: ")
+        else:
+            try:
+                time = time * 60
+                float(time)
+            except ValueError:
+                return await ctx.send("Your time is an invalid number. Make sure...it is a number.")
+            await ctx.channel.set_permissions(user, send_messages=False)
+            await ctx.channel.send(f"{user.mention} is now forced to shut up. :zipper_mouth: ")
+            await asyncio.sleep(time)
+            await ctx.channel.set_permissions(user, send_messages=True)
+            await ctx.channel.send(f"{user.mention} is now un-shutted up.")
+    except discord.Forbidden:
+        return await ctx.send("I could not mute the user. Make sure I have the manage channels permission.")
+    
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
