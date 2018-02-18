@@ -28,6 +28,11 @@ async def on_ready():
         await asyncio.sleep(10)
     
     
+@bot.event
+async def when_mentioned():
+    await ctx.send("Y DA F*** U PING MEH @$$? lUl. AnywaYS, im L3NNY, a bot by TheEmperor™#2644. Sorry for being too :regional_indicator_i: :regional_indicator_n: :regional_indicator_t: :regional_indicator_e: :regional_indicator_n: :regional_indicator_s: :regional_indicator_e:. Anyways, have fun using me!  ")    
+    
+    
 @bot.command()
 async def ping(ctx):
     """Gives you a websocket latency."""
