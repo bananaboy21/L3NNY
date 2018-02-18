@@ -27,7 +27,7 @@ async def on_ready():
         await bot.change_presence(game=discord.Game(name="_help"))
         await asyncio.sleep(10)
         await bot.change_presence(game=discord.Game(name="with yo mama"))
-        await asyncio.sleep(5)
+        await asyncio.sleep(3)
     
 @bot.command()
 async def server(ctx):
