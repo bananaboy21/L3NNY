@@ -75,21 +75,6 @@ async def say(ctx, *, message:str):
     await ctx.message.delete()
     await ctx.send(message)
     
-    
-@bot.command()
-@commands.has_permissions(kick_members = True)
-async def kick(ctx, user: discord.Member):
-    """Kicks a member."""
-    await ctx.send(f"The administrator is putting on his boot. The Administrator puts in on and kicks **{user.name}** in his rear end.. **{user.name}** has been kicked.")
-    await user.kick()    
-    
-   
-@bot.command()
-@commands.has_permissions(ban_members = True)
-async def ban(ctx, user: discord.Member):
-    """Bans a member."""
-    await ctx.send(f"The admministrator is getting his hammer. He takes his hammer and swings it at **{user.name}** in the back...Ouch! {user.name} has been banned.")
-    await user.ban()
    
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
