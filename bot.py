@@ -46,7 +46,7 @@ async def invite(ctx):
     await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=0&scope=bot")
     
     
- @bot.command()
+@bot.command()
 async def upvote(ctx):
     """Upvote me!"""
     await ctx.send ("Upvote me here! https://discordbots.org/bot/414456650519412747") 
