@@ -48,7 +48,7 @@ async def invite(ctx):
     
  @bot.command()
 async def upvote(ctx):
-    await ctx.sned (" Upvote me here! https://discordbots.org/bot/414456650519412747") 
+    await ctx.send (" Upvote me here! https://discordbots.org/bot/414456650519412747") 
     
 @bot.command()
 @commands.has_permissions(manage_messages = True)
