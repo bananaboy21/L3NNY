@@ -83,15 +83,7 @@ async def say(ctx, *, message:str):
             await user.send(msg)
             await ctx.send("SuccESS! Your DM has made it! :white_check_mark: ")
         except:
-            await ctx.send("Error :x:. Make sure your message is shaped in this way: *dm [tag person] [msg]")
-            
-            
-      @commands.command()
-    @commands.has_permissions(kick_members = True)
-    async def kick(self, ctx, user: discord.Member):
-        """Kicks a member"""
-        await ctx.channel.send(f"The administrator gets his boot on. Then, the administrator kicks **{user.name}** in the rear end. {user.name} has been kicked :boot:")
-        await user.kick()       
+            await ctx.send("Error :x:. Make sure your message is shaped in this way: *dm [tag person] [msg]")       
 
    
 if not os.environ.get('TOKEN'):
