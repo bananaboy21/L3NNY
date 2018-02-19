@@ -64,9 +64,7 @@ async def purge(ctx, num: int):
             except ValueError:
                 return await ctx.send("The number is invalid. Make sure it is valid! Usage: _purge [number of msgs]")
             await ctx.channel.purge(limit=num+1)
-            msg = await ctx.send("Done :ok_hand:")
-await asyncio.sleep(2)
-await msg.delete()
+            await ctx.send("Done :ok_hand:")
     except discord.Forbidden:
         await ctx.send("Unable to purge. I don't have Manage Messages permission.")
         
