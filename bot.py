@@ -62,7 +62,7 @@ async def purge(ctx, num: int):
             try:
                 float(num)
             except ValueError:
-                return await ctx.send("The number is invalid. Make sure it is valid! Usage: *purge [number of msgs]")
+                return await ctx.send("The number is invalid. Make sure it is valid! Usage: _purge [number of msgs]")
             await ctx.channel.purge(limit=num+1)
             await ctx.send("Done :ok_hand:")
     except discord.Forbidden:
@@ -75,6 +75,14 @@ async def say(ctx, *, message:str):
     await ctx.message.delete()
     await ctx.send(message)      
 
+    
+@bot.command()
+async def credits(ctx):
+    """Roll thee credits!."""
+    color = discord.Color(value=0x00ff00)
+    em = discord.Embed(color=color, title='Credits:')
+    em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
+    await ctx.send(embed=em)   
    
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
