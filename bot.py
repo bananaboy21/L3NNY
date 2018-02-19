@@ -73,17 +73,7 @@ async def purge(ctx, num: int):
 async def say(ctx, *, message:str):
     """Speak as me!"""
     await ctx.message.delete()
-    await ctx.send(message)
-    
-    
-    @commands.command()
-    async def msg(self, ctx, user: discord.Member, *, msg: str):
-        """message someone as me. _dm [user] [message]"""
-        try:
-            await user.send(msg)
-            await ctx.send("SuccESS! Your DM has made it! :white_check_mark: ")
-        except:
-            await ctx.send("Error :x:. Make sure your message is shaped in this way: *dm [tag person] [msg]")       
+    await ctx.send(message)      
 
    
 if not os.environ.get('TOKEN'):
