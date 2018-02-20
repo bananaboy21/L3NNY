@@ -17,12 +17,6 @@ import json
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="TheEmperor™'s Discord bot.\n\nHelp Commands",owner_id=250674147980607488)
 
 
-def dev_check(id):
-    if id == 250674147980607488 or id == 277981712989028353:
-        return True
-    return False
-
-
 @bot.event
 async def on_ready():
     print('Bot is online, and ready to ROLL!')
@@ -31,7 +25,8 @@ async def on_ready():
         await asyncio.sleep(10)
         await bot.change_presence(game=discord.Game(name="_help"))
         await asyncio.sleep(10)
-    
+
+        
 @bot.command()
 async def server(ctx):
     """Join my discord server!"""
