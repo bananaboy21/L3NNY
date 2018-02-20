@@ -85,8 +85,8 @@ async def credits(ctx):
     await ctx.send(embed=em)
     
     
-     @commands.command()
-    @commands.has_permissions(administrator = True)
+   @commands.command()
+   @commands.has_permissions(administrator = True)
     async def dm(self, ctx, user: discord.Member, *, msg: str):
         """DM people as me!"""
         try:
