@@ -82,7 +82,23 @@ async def credits(ctx):
     color = discord.Color(value=0x00ff00)
     em = discord.Embed(color=color, title='Credits:')
     em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
-    await ctx.send(embed=em)   
+    await ctx.send(embed=em)
+    
+    
+     @commands.command()
+    @commands.has_permissions(administrator = True)
+    async def dm(self, ctx, user: discord.Member, *, msg: str):
+        """DM people as me!"""
+        try:
+            await user.send(msg)
+            await ctx.message.delete()            
+            await ctx.send("They got the msg.")
+        except discord.ext.commands.MissingPermissions:
+            await ctx.send("rip you. You dont got enough perms.")
+        except:
+            await ctx.send(":x: Error. Make sure your message is shaped in this way: _dm [DiscordTag#0000] [msg]")
+
+
    
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
