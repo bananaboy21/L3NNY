@@ -37,7 +37,7 @@ async def server(ctx):
 @bot.command()
 async def ping(ctx):
     """Gives you a websocket latency."""
-    color = discord.Color(value=0xf7f8f9)
+    color = discord.Color(value=0x00ff00)
     em = discord.Embed(color=color, title='Pong! Websocket Latency:')
     em.description = f"{bot.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
@@ -81,7 +81,7 @@ async def say(ctx, *, message:str):
 @bot.command()
 async def credits(ctx):
     """Roll thee credits!."""
-    color = discord.Color(value=0xf7f8f9)
+    color = discord.Color(value=0x00ff00)
     em = discord.Embed(color=color, title='Credits:')
     em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
     await ctx.send(embed=em)
@@ -90,12 +90,11 @@ async def credits(ctx):
 @bot.event
 async def on_guild_join(guild):
     lol = bot.get_channel(415660022488367105)
-    em = discord.Embed(color=discord.Color(value=0xf7f8f9)
+    em = discord.Embed(color=discord.Color(value=0xffffff))
     em.title = "I has joined a server:"
     em.description = guild
     await lol.send(embed=em)
-    
-    
+
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
