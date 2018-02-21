@@ -84,6 +84,14 @@ async def credits(ctx):
     em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
     await ctx.send(embed=em)
 
+    
+@bot.event
+async def on_guild_join(guild):
+    lol = bot.get_channel(415660022488367105)
+    em = discord.Embed(color=discord.Color(value=0xffffff))
+    em.title = "I has joined a server:"
+    em.description = guild
+    await lol.send(embed=em)
 
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
