@@ -18,7 +18,7 @@ class mod:
         try:
             await user.send(msg)
             await ctx.message.delete()            
-            await ctx.send("They got the message.:ok_hand:")
+            await ctx.send("They got the message :ok_hand:")
         except discord.ext.commands.MissingPermissions:
             await ctx.send("rip you. you dont got enough permz..")
         except:
