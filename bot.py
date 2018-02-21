@@ -100,6 +100,13 @@ async def ban(ctx, user: discord.Member):
     await ctx.send(f"The administraor is getting a hold of his ban hammer. He swings it at **{user.name}**. }user.name} has been banned.")
     await user.ban()
 
+    
+@bot.command()
+async def github(ctx):
+    """Get my github repo"""
+    await ctx.send("Here is my github: https://www.google.com/search?q=hell+naw&source=lnms&tbm=isch&sa=X&ved=0ahUKEwji2KGtl7jZAhVi3IMKHVfMCMUQ_AUICygC&biw=1024&bih=662#imgrc=cncAa1-QM6sfJM:")
+    
+    
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
