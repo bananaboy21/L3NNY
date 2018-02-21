@@ -78,12 +78,19 @@ async def say(ctx, *, message:str):
     
 @bot.command()
 async def credits(ctx):
-    """Roll thee credits!."""
+    """Roll the credits!."""
     color = discord.Color(value=0x00ff00)
     em = discord.Embed(color=color, title='Credits:')
     em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
     await ctx.send(embed=em)
 
+@bot.command()
+@commands.has_permissions(kick_members = True)
+async def kick(ctx, user: discord.Member):
+    """Kicks a member out of this c00l clUb of yours"""
+    await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name} has been kicked.")
+    await user.kick()
+    
 
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
