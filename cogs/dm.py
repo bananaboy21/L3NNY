@@ -12,14 +12,24 @@ class mod:
         
         
     @commands.command()
-    @commands.has_permissions(administrator = True)
-    async def dm(self, ctx, user: discord.Member, *, msg: str):
-        """DM someone as me!"""
-        try:
-            await user.send(msg)
-            await ctx.message.delete()            
-            await ctx.send("They got the message :ok_hand:")
-        except discord.ext.commands.MissingPermissions:
-            await ctx.send("rip you. you dont got enough permz..")
-        except:
-            await ctx.send(":x: Error. Make sure your message is shaped in this way: _dm [tag person] [msg]")
+    async def serverinfo(self, ctx):
+        """Gets you info on the server."""
+        guild = ctx.guild
+        roles = [x.name for x in guild.roles]
+        role_length = len(roles)
+        roles = ', '.join(roles)
+        channels = len(guild.channels)
+        time = str(guild.created_at.strftime("%b %m, %Y, %A, %I:%M %p"))         
+        em = discord.Embed(description= "-", title='Server Info', colour=0xffffff)
+        em.set_thumbnail(url=guild.icon_url)
+        em.add_field(name='__Server __', value=str(guild.name))
+        em.add_field(name='__Server ID__', value=str(guild.id))
+        em.add_field(name='__Owner__', value=str(guild.owner))
+        em.add_field(name='__Owner ID__', value=guild.owner_id) 
+        em.add_field(name='__Member Count__', value=str(guild.member_count))
+        em.add_field(name='__Text/Voice Channels__', value=str(channels))
+        em.add_field(name='__Server Region__', value='%s' % str(guild.region))
+        em.add_field(name='__ Total Roles__', value='%s' % str(role_length))
+        em.add_field(name='__Roles__', value='%s' % str(roles))
+        em.set_footer(text='Created - %s' % time)        
+        await ctx.send(embed=em)
