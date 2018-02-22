@@ -97,7 +97,7 @@ async def kick(ctx, user: discord.Member):
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, user: discord.Member):
     """Bans a member from this c00l club"""
-    await ctx.send(f"The administraor is getting a hold of his ban hammer. He swings it at **{user.name}**. }user.name} has been banned.")
+    await ctx.send(f"The administraor is getting a hold of his ban hammer. He swings it at **{user.name}**. {user.name} has been banned.")
     await user.ban()
 
     
