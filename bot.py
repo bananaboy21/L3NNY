@@ -33,7 +33,7 @@ async def on_ready():
     
 @bot.event
 async def on_guild_join(guild):
-    lol = bot.get_channel(415660022488367105)
+    lol = bot.get_channel(409747640272551936)
     em = discord.Embed(color=discord.Color(value=0x00ff00))
     em.title = "L3NNY had arived in a new server!"
     em.description = f"Server: {guild}"
@@ -103,7 +103,7 @@ async def credits(ctx):
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, user: discord.Member):
     """Kicks a member out of this c00l clUb of yours"""
-    await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name} has been kicked.")
+    await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name}** has been kicked.")
     await user.kick()
 
     
