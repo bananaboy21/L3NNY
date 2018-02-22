@@ -26,6 +26,20 @@ async def on_ready():
         await asyncio.sleep(10)
         await bot.change_presence(game=discord.Game(name="_help"))
         await asyncio.sleep(10)
+        await bot.change_presence(game=discord.Game(name="V 0.0.5"))
+        await asyncio.sleep(10)
+        
+    
+    
+@bot.event
+async def on_guild_join(guild):
+    lol = bot.get_channel(392443319684300801)
+    em = discord.Embed(color=discord.Color(value=0x00ff00))
+    em.title = "dat banana bot has arrived in a new server!"
+    em.description = f"Server: {guild}"
+    await lol.send(embed=em)
+    await ctx.send(f"Ello, doods in **{guild.name}**! Thanks for welcoming me! I am L3NNY. Your gonna enjoy me... Type _help for more!")
+    
     
 @bot.command()
 async def server(ctx):
