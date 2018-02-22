@@ -104,7 +104,7 @@ async def ban(ctx, user: discord.Member):
 @bot.command()
 async def github(ctx):
     """Get my github repo"""
-    await ctx.send("Here is my github: https://www.google.com/search?q=hell+naw&source=lnms&tbm=isch&sa=X&ved=0ahUKEwji2KGtl7jZAhVi3IMKHVfMCMUQ_AUICygC&biw=1024&bih=662#imgrc=cncAa1-QM6sfJM:")
+    await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
     
     
 if not os.environ.get('TOKEN'):
