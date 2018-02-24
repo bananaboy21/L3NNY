@@ -33,7 +33,7 @@ async def on_ready():
     
 @bot.event
 async def on_guild_join(guild):
-    lol = bot.get_channel(392443319684300801)
+    lol = bot.get_channel(415660022488367105)
     em = discord.Embed(color=discord.Color(value=0x00ff00))
     em.title = "L3NNY has arrived in a new server!"
     em.description = f"Server: {guild}"
