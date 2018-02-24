@@ -16,7 +16,6 @@ from discord.ext import commands
 import json
 from discord.ext import commands
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="TheEmperor™'s Discord bot.\n\nHelp Commands",owner_id=250674147980607488)
-bot.remove_command("help")
 
 
 @bot.event
@@ -120,19 +119,6 @@ async def ban(ctx, user: discord.Member):
 async def github(ctx):
     """Get my github repo"""
     await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
-    
-@bot.command()
-async def help(ctx):
-await ctx.send
-("credits: Roll the credits!.
-  github:  Get my github repo
-  help:    Shows this message.
-  invite:  lets me join ur clUb
-  ping:    Gives you a websocket latency.
-  say:     Speak as me!
-  server:  Join my discord server!
-  upvote:  Upvote me!")
-
     
     
 if not os.environ.get('TOKEN'):
