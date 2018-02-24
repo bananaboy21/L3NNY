@@ -40,6 +40,15 @@ async def on_guild_join(guild):
     await lol.send(embed=em)
     await ctx.send(f"Ello, my dudes in **{guild.name}**! Thanks for inviting me! I am L3NNY, you probialy know that already by my name. Try _help for my command list.")
     
+@bot.event
+async def on_guild_remove(guild):
+    lol = bot.get_channel(415660022488367105)
+    em = discord.Embed(color=discord.Color(value=0xf44242))
+    em.title = "L3NNY has left a server."
+    em.description = f"Server: {guild}"
+    await lol.send(embed=em)
+
+    
     
 @bot.command()
 async def server(ctx):
