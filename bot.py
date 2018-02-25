@@ -58,7 +58,7 @@ async def server(ctx):
 @bot.command()
 async def ping(ctx):
     """Gives you a websocket latency."""
-    color = discord.Color(value=0x00ff00)
+    color = discord.Color(value=0xffffff)
     em = discord.Embed(color=color, title='Pong! Websocket Latency:')
     em.description = f"{bot.latency * 1000:.4f} ms"
     await ctx.send(embed=em)
@@ -102,7 +102,7 @@ async def say(ctx, *, message:str):
 @bot.command()
 async def credits(ctx):
     """Roll the credits!."""
-    color = discord.Color(value=0x00ff00)
+    color = discord.Color(value=0xffffff)
     em = discord.Embed(color=color, title='Credits:')
     em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
     await ctx.send(embed=em)
