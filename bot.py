@@ -33,7 +33,7 @@ async def on_ready():
     
 @bot.event
 async def on_guild_join(guild):
-    lol = bot.get_channel(415660022488367105)
+    lol = bot.get_channel(417460269313425409)
     em = discord.Embed(color=discord.Color(value=0xffffff))
     em.title = "L3NNY has arrived in a new server!"
     em.description = f"Server: {guild}"
@@ -42,7 +42,7 @@ async def on_guild_join(guild):
     
 @bot.event
 async def on_guild_remove(guild):
-    lol = bot.get_channel(415660022488367105)
+    lol = bot.get_channel(417460269313425409)
     em = discord.Embed(color=discord.Color(value=0xf44242))
     em.title = "L3NNY has left a server."
     em.description = f"Server: {guild}"
