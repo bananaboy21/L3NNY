@@ -152,6 +152,55 @@ async def github(ctx):
             em.set_image(url=av)
             await ctx.send(embed=em) 
             
+            
+@bot.command(hidden=True, name='eval')
+async def _eval(ctx, *, body: str):
+
+    if not dev_check(ctx.author.id):
+        return await ctx.send(":x:STOP! Only developer's can use my **awesome smartnesssss**:x:.")
+
+    env = {
+        'bot': bot,
+        'ctx': ctx,
+        'channel': ctx.channel,
+        'author': ctx.author,
+        'guild': ctx.guild,
+        'message': ctx.message,
+    }
+
+    env.update(globals())
+
+    body = cleanup_code(body)
+    stdout = io.StringIO()
+
+    to_compile = f'async def func():\n{textwrap.indent(body, "  ")}'
+
+    try:
+        exec(to_compile, env)
+    except Exception as e:
+        return await ctx.send(f'```py\n{e.__class__.__name__}: {e}\n```')
+
+    func = env['func']
+    try:
+        with redirect_stdout(stdout):
+            ret = await func()
+    except Exception as e:
+        value = stdout.getvalue()
+        await ctx.send(f'```py\n{value}{traceback.format_exc()}\n```')
+    else:
+        value = stdout.getvalue()
+        try:
+            await ctx.message.add_reaction('\u2705')
+        except:
+            pass
+
+        if ret is None:
+            if value:
+                await ctx.send(f'```py\n{value}\n```')
+        else:
+            await ctx.send(f'```py\n{value}{ret}\n```')     
+            
+           
     
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
