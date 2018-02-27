@@ -49,11 +49,10 @@ async def on_guild_remove(guild):
     await lol.send(embed=em)
 
     
-    
 @bot.command()
-async def server(ctx):
+async def support(ctx):
     """Join my discord server!"""
-    await ctx.send ("Here is our discord: https://discord.gg/WewwYV5")
+    await ctx.send ("Here is our discord: https://discord.gg/zzzJAKM")
 
 @bot.command()
 async def ping(ctx):
@@ -100,15 +99,6 @@ async def say(ctx, *, message:str):
 
     
 @bot.command()
-async def credits(ctx):
-    """Roll the credits!."""
-    color = discord.Color(value=0xffffff)
-    em = discord.Embed(color=color, title='Credits:')
-    em.description = f"TheEmperor™#2644 and a little help from dat banana boi#1982."
-    await ctx.send(embed=em)
-
-
-@bot.command()
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, user: discord.Member):
     """Kicks a member out of this c00l clUb of yours"""
@@ -129,7 +119,23 @@ async def github(ctx):
     """Get my github repo"""
     await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
 
-            
+@bot.command()
+async def help(ctx, command=None):
+	if command is None:
+		color = discord.Color(value=0xffffff)
+		em = discord.Embed(color=color, title='My Commands')
+		em.description = 'Thanks for using me. Here are my commands...'
+		em.add_field(name="ping", value="Get a websocket latency.")
+		em.add_field(name="ban", value="Bans a member from the server.")
+		em.add_field(name="kick", value="Kicks a member from the server.")
+                em.add_field(name="invite", value="Invites me to your server.")
+                em.add_field(name="say", value="Speak as me! Usage: _say [msg].")
+		em.add_field(name="github", value="Gives you my Github repo.")
+                em.add_field(name="upvote", value="Upvote me.")
+                em.add_field(name="support", value="Joins the support server") 
+		em.set_thumbnail(url='https://cdn.discordapp.com/avatars/414456650519412747/ede4bd62db1db6719bbbda4aa78a9344.webp?size=1024')
+
+
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
