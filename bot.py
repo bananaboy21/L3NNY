@@ -79,7 +79,7 @@ async def upvote(ctx):
 async def purge(ctx, num: int = None):
 	try: 
 	    if num is None:
-	        await ctx.send("How many messages would you like me to delete? Usage: *purge [number of msgs]")
+	        await ctx.send("Deletes messages. Usage: _purge [number]")
 	    else:
 	        try:
 	            float(num)
