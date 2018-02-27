@@ -16,6 +16,7 @@ from discord.ext import commands
 import json
 from discord.ext import commands
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="TheEmperor™'s Discord bot.\n\nHelp Commands",owner_id=250674147980607488)
+bot.remove_command("help")
 
 
 @bot.event
@@ -48,7 +49,24 @@ async def on_guild_remove(guild):
     em.description = f"Server: {guild}"
     await lol.send(embed=em)
 
-    
+@bot.command()
+async def help(ctx):
+    color = discord.Color(value=0x00ff00)
+    em = discord.Embed(color=color, title='L3NNY Commands')
+    em.add_field(name="invite", value="Invites me to your server")
+    em.add_field(name="support", value="Joins my discord server")
+    em.add_field(name="ping", value="Get my websocket latency ")
+    em.add_field(name="kick", value="Kicks a member from the server")
+    em.add_field(name="ban", value="Bans a member from the server")
+    em.add_feild(name="github", value=" Gives link to my github repo")
+    em.add_field(name="Upvote", value="upvote me!")
+     em.add_field(name="say", value="Speak as me! Usage: _say [msg]")
+    em.set_thumbnail(url="https://cdn.discordapp.com/avatars/414456650519412747/ede4bd62db1db6719bbbda4aa78a9344.webp?size=1024")
+    await ctx.send(embed=em)
+
+
+
+
 @bot.command()
 async def support(ctx):
     """Join my discord server!"""
