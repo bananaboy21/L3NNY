@@ -92,9 +92,7 @@ async def purge(ctx, number: int = None):
 	except discord.Forbidden:
 	    await ctx.send("Purge unsuccessful. I don't have Manage Messages permission.")
 
-
-        
-        
+               
 @bot.command()
 async def say(ctx, *, message:str):
     """Speak as me!"""
