@@ -80,14 +80,14 @@ async def purge(ctx, num: int):
     """Deletes a # of msgs. *purge [# of msgs].""" 
     try: 
         if num is None:
-            await ctx.send("How many messages would you like me to delete? Usage: *purge [number of msgs]")
+            await ctx.send("Deletes messages. Usage: _purge [number]")
         else:
             try:
                 float(num)
             except ValueError:
                 return await ctx.send("The number is invalid. Make sure it is valid! Usage: *purge [number of msgs]")
             await ctx.channel.purge(limit=num+1)
-            await ctx.send("Purged successfully :white_check_mark:")
+            await ctx.send("Done ( ͡° ͜ʖ ͡°)")
     except discord.Forbidden:
         await ctx.send("Purge unsuccessful. The bot does not have Manage Msgs permission.")
 	
