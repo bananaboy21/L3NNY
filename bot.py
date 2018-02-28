@@ -130,7 +130,7 @@ async def mute(ctx, user: discord.Member = None):
         await ctx.channel.set_permissions(user, send_messages=False)
         await ctx.send(f"{user.mention} is now muted. ~~They were so anooying, that i wanted to **DIEEE**~~")
     except discord.Forbidden:
-        return await ctx.send("I could not mute the user. Make sure I have the manage channels permission.")
+        return await ctx.send("OoF! I could'nt mute the user. Make sure I have the manage channels permission.")
 	
 	
 
