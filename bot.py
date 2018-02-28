@@ -120,6 +120,19 @@ async def github(ctx):
     """Get my github repo"""
     await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
 
+@bot.command()
+@commands.has_permissions(ban_members=True)
+async def mute(ctx, user: discord.Member = None):
+    '''Mutes a user'''
+    if user is None:
+    	return await ctx.send("Please mention a user to mute them!")
+    try:
+        await ctx.channel.set_permissions(user, send_messages=False)
+        await ctx.send(f"{user.mention} is now muted. ~~They were so anooying, that i wanted to **DIEEE**~~")
+    except discord.Forbidden:
+        return await ctx.send("I could not mute the user. Make sure I have the manage channels permission.")
+	
+	
 
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
