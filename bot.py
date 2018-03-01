@@ -76,7 +76,8 @@ async def upvote(ctx):
     
 @bot.command()
 @commands.has_permissions(manage_messages = True)
-async def purge(ctx, num: int = None):   
+async def purge(ctx, num: int = None):
+	"""Deletes messages. _purge [number].""" 
 	try: 
 	    if num is None:
 	        await ctx.send("How many messages would you like me to delete? Usage: _purge [number]")
