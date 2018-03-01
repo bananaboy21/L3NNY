@@ -99,7 +99,7 @@ async def say(ctx, *, message:str):
     await ctx.send(message)      
 
     
-@@bot.command()
+@bot.command()
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, user: discord.Member):
     """Kicks a member out of this c00l club of yours."""
