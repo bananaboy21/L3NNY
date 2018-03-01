@@ -99,18 +99,12 @@ async def say(ctx, *, message:str):
     await ctx.send(message)      
 
     
-@bot.command()
+@@bot.command()
 @commands.has_permissions(kick_members = True)
-async def kick(ctx, user: discord.Member = None):
-	"""Kicks someone."""
-	if user is None:
-		await ctx.send("Please tag a person to kick!")
-	else:
-		try:
-			await ctx.guild.kick()
-			await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name}** has been kicked.")
-		except discord.Forbidden:
-			await ctx.send("OoF! I don't have enough permissions to kick this rebel.")
+async def kick(ctx, user: discord.Member):
+    """Kicks a member out of this c00l club of yours."""
+    await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name}** has been kicked.")
+    await user.kick()
 	
 	
 @bot.command()
