@@ -105,7 +105,7 @@ async def say(ctx, *, message:str):
 @commands.has_permissions(kick_members = True)
 async def kick(ctx, user: discord.Member):
     """Kicks a member out of this c00l club of yours."""
-    await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name}** has been kicked.")
+    await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks {user.mention} in the rear end. {user.mention} has been kicked.")
     await user.kick()
 	
 	
@@ -113,7 +113,7 @@ async def kick(ctx, user: discord.Member):
 @commands.has_permissions(ban_members = True)
 async def ban(ctx, user: discord.Member):
     """Bans a member from this c00l club"""
-    await ctx.send(f"The administraor is getting a hold of his ban hammer. He swings it at **{user.name}**. **{user.name}** has been banned.")
+    await ctx.send(f"The administraor is getting a hold of his ban hammer. He swings it at {user.mention}. {user.mention} has been banned.")
     await user.ban()
 
     
