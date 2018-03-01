@@ -76,20 +76,21 @@ async def upvote(ctx):
     
 @bot.command()
 @commands.has_permissions(manage_messages = True)
-async def purge(ctx, num: int):
-    """Deletes a # of msgs. *purge [# of msgs].""" 
-    try: 
-        if num is None:
-            await ctx.send("Deletes messages. Usage: _purge [number]")
-        else:
-            try:
-                float(num)
-            except ValueError:
-                return await ctx.send("The number is invalid. Make sure it is valid! Usage: *purge [number of msgs]")
-            await ctx.channel.purge(limit=num+1)
-            await ctx.send("Done ( ͡° ͜ʖ ͡°)")
-    except discord.Forbidden:
-        await ctx.send("Purge unsuccessful. The bot does not have Manage Msgs permission.")
+async def purge(ctx, num: int = None):   
+	try: 
+	    if num is None:
+	        await ctx.send("How many messages would you like me to delete? Usage: _purge [number]")
+	    else:
+	        try:
+	            float(num)
+	        except ValueError:
+	            return await ctx.send("The number is invalid. Make sure it is a number...")
+	        await ctx.channel.purge(limit=num+1)
+	        msg = await ctx.send(f"Done ( ͡° ͜ʖ ͡°)")
+	        await asyncio.sleep(3)
+	        await msg.delete()
+	except discord.Forbidden:
+	    await ctx.send("OoF! I don't have **Manage Messages** permission.")
 	
                
 @bot.command()
@@ -121,8 +122,6 @@ async def github(ctx):
     await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
 
 	
-	
-
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
