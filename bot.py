@@ -107,7 +107,7 @@ async def kick(ctx, user: discord.Member = None):
 		await ctx.send("Please tag a person to kick!")
 	else:
 		try:
-			await user.kick()
+			await ctx.guild.kick
 			await ctx.send(f"The administrator is putting on his boot. He puts it on and kicks **{user.name}** in the rear end. **{user.name}** has been kicked.")
 		except discord.Forbidden:
 			await ctx.send("OoF! I don't have enough permissions to kick this rebel.")
