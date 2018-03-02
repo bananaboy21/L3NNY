@@ -110,9 +110,9 @@ async def kick(ctx, user: discord.Member = None):
 	else:
 		try:
 			await user.kick()
-			await ctx.send(f"The administrator is putting on his boot. He kicks {user.mention} in the rear end. {user got kicked!.")
+			await ctx.send(f"The administrator is putting on his boot. He kicks {user.mention} in the rear end. {user.mention} got kicked!.")
 		except discord.Forbidden:
-			await ctx.send("Looks like I'm missing permissions to kick this user.")
+			await ctx.send("OoF! I'm missing **kick/ban** perm.")
 	
 	
 @bot.command()
