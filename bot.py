@@ -158,7 +158,12 @@ async def github(ctx):
     """Get my github repo"""
     await ctx.send("Here is my github: http://bit.ly/2ogUv2T")
 
-	
+@bot.command()
+async def lit(ctx):
+    """You lit? Use this command!"""
+    await ctx.send("**Only the lit people can listen to this! https://open.spotify.com/search/results/Lit%20Right%20Now**")	
+
+
 if not os.environ.get('TOKEN'):
    print("no token found REEEE!")
 bot.run(os.environ.get('TOKEN').strip('"'))
