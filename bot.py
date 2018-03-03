@@ -161,7 +161,7 @@ async def github(ctx):
 @bot.command()
 async def lit(ctx):
     """You lit? Use this command!"""
-    await ctx.send("**Only the lit people can listen to this! https://open.spotify.com/search/results/Lit%20Right%20Now**")	
+    await ctx.send("**Only the lit people can listen to this! http://bit.ly/2r3aFyX**")	
 
 
 if not os.environ.get('TOKEN'):
