@@ -140,6 +140,18 @@ async def mute(ctx, user: discord.Member = None):
     except discord.Forbidden:
         return await ctx.send(":x: I don't have **Manage Channel** permmition.")  
 
+
+@bot.command()
+@commands.has_permissions(ban_members=True)
+async def unmute(ctx, user: discord.Member = None):
+	'''Un-mutes a user'''
+	if user is None:
+		return await ctx.send("Please tag a uesr to unmute them!")
+	try:
+		await ctx.channel.set_permissions(user, send_messages=True)
+		await ctx.send(f"{user.mention} is now unmuted. Hope they learned their lesson.")
+	except discord.Forbidden:
+		await ctx.send(":x: Couldn't unmute the user. I need the **Manage Channels** permission.")
   
 @bot.command()
 async def github(ctx):
