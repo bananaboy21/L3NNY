@@ -1,4 +1,4 @@
-import discord
+mport discord
 import os
 import io
 import traceback
@@ -26,7 +26,7 @@ async def on_ready():
         await asyncio.sleep(10)
         await bot.change_presence(game=discord.Game(name="_help"))
         await asyncio.sleep(10)
-        await bot.change_presence(game=discord.Game(name="V 0.0.9"))
+        await bot.change_presence(game=discord.Game(name="V 0.0.8"))
         await asyncio.sleep(10)
         
     
