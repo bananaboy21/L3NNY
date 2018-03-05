@@ -23,4 +23,4 @@ class mod:
         except:
             await ctx.send("It did not make it.")
 def setup(bot):
-    bot.add_cog(UrCogClassName(bot))
+    bot.add_cog(fun.py(bot))
