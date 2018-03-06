@@ -48,6 +48,15 @@ async def on_guild_remove(guild):
     em.description = f"Server: {guild}"
     await lol.send(embed=em)   
 
+@bot.command()
+async def bug(ctx, *, msg:str):
+    """Report a bug"""
+    lol = bot.get_channel(373917178547929088)
+    color = discord.Color(value=0x00ff00)
+    em=discord.Embed(color=color, title="Bug has been reported!")
+    em.description = f"Bug: {msg}"
+    em.set_footer(text=f"Bug sent by {ctx.message.author.name}")                         
+    await ctx.send("```Thanks for reporting the bug! You have helped with the development```")  
 
 @bot.command()
 async def support(ctx):
