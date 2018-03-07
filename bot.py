@@ -48,19 +48,6 @@ async def on_guild_remove(guild):
     em.description = f"Server: {guild}"
     await lol.send(embed=em)   
 
-@bot.command()
-@commands.has_permissions(administrator = True)
-    async def dm(self, ctx, user: discord.Member, *, msg: str):
-        """DM someone as me!"""
-        try:
-            await user.send(msg)
-            await ctx.message.delete()            
-            await ctx.send("The DM has made it.")
-        except commands.MissingPermissions:
-            await ctx.send("Well, you don't have enough permmitions")
-        except:
-            await ctx.send(":x: Make sure you have the perms and have it in this way: _dm [tag] [message]")
-
 
 @bot.command()
 async def support(ctx):
