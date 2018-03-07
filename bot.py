@@ -49,14 +49,18 @@ async def on_guild_remove(guild):
     await lol.send(embed=em)   
 
 @bot.command()
-async def bug(ctx, *, msg:str):
-    """Report a bug"""
-    lol = bot.get_channel(373917178547929088)
-    color = discord.Color(value=0x00ff00)
-    em=discord.Embed(color=color, title="Bug has been reported!")
-    em.description = f"Bug: {msg}"
-    em.set_footer(text=f"Bug sent by {ctx.message.author.name}")                         
-    await ctx.send("```Thanks for reporting the bug! You have helped with the development```")  
+    @commands.has_permissions(administrator = True)
+    async def dm(self, ctx, user: discord.Member, *, msg: str):
+        """DM someone as me!"""
+        try:
+            await user.send(msg)
+            await ctx.message.delete()            
+            await ctx.send("The DM has made it.")
+        except commands.MissingPermissions:
+            await ctx.send("Well, you don't have enough permmitions")
+        except:
+            await ctx.send(":x: Make sure you have the perms and have it in this way: _dm [tag] [message]")
+
 
 @bot.command()
 async def support(ctx):
