@@ -49,7 +49,7 @@ async def on_guild_remove(guild):
     await lol.send(embed=em)   
 
 @bot.command()
-    @commands.has_permissions(administrator = True)
+@commands.has_permissions(administrator = True)
     async def dm(self, ctx, user: discord.Member, *, msg: str):
         """DM someone as me!"""
         try:
