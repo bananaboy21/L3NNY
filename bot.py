@@ -22,8 +22,12 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="T
 async def on_ready():
     print('Bot is online, and ready to ROLL!')
     while True:
-       bot.change_presence(activity=discord.game(name=f"with {len(bot.guilds)} servers boiii!"))
-
+        await bot.change_presence(game=discord.Game(name=f"with {len(bot.guilds)} servers boi!"))
+        await asyncio.sleep(15)
+        await bot.change_presence(game=discord.Game(name="_help"))
+        await asyncio.sleep(15)
+        await bot.change_presence(game=discord.Game(name="V 0.0.8"))
+        await asyncio.sleep(15)
         
         
 @bot.event
