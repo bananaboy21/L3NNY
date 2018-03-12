@@ -22,15 +22,15 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="T
 async def on_ready():
     print('Bot is online, and ready to ROLL!')
     while True:
-        await bot.change_presence(game=discord.Game(name=f"with {len(bot.guilds)} servers!"))
-        await asyncio.sleep(10)
+        await bot.change_presence(game=discord.Game(name=f"with {len(bot.guilds)} servers boi!"))
+        await asyncio.sleep(15)
         await bot.change_presence(game=discord.Game(name="_help"))
-        await asyncio.sleep(10)
+        await asyncio.sleep(15)
         await bot.change_presence(game=discord.Game(name="V 0.0.8"))
-        await asyncio.sleep(10)
+        await asyncio.sleep(15)
+
         
-    
-    
+        
 @bot.event
 async def on_guild_join(guild):
     lol = bot.get_channel(417460269313425409)
