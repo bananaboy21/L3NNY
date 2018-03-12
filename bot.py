@@ -22,7 +22,7 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="T
 async def on_ready():
     print('Bot is online, and ready to ROLL!')
     while True:
-       bot.change_presence(activity=discord.Game(name=f"with {len(bot.guilds)} servers boiii!"))
+       bot.change_presence(activity=discord.game(name=f"with {len(bot.guilds)} servers boiii!"))
 
         
         
