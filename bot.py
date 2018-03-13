@@ -50,9 +50,15 @@ async def on_guild_remove(guild):
 
 
 @bot.command()
-async def support(ctx):
-    """Join my discord server!"""
-    await ctx.send ("Here is our discord: https://discord.gg/zzzJAKM")
+async def support():
+    """Join my support server!"""
+    color = ''.join([random.choice('0123456789ABCDEF') for x in range(6)])
+    color = int(color, 16)
+    embed=discord.Embed(title=":tada: Join the Development! :tada:", colour = discord.Colour(value=color))
+    embed.add_field(name = "Dev Server: ", value = 'https://discord.gg/zzzJAKM')
+    embed.add_field(name = "Why Join?", value = "So you can help us suggest improvements, help code, and give us some advise!")
+    embed.set_footer(text = "Don't Forget to Upvote me!")
+    await bot.say(embed = embed)
 
 @bot.command()
 async def ping(ctx):
