@@ -57,7 +57,12 @@ async def ping(ctx):
 async def invite(ctx):
     """lets me join ur clUb"""
     await ctx.send ("Lemme join dat club: https://discordapp.com/api/oauth2/authorize?client_id=414456650519412747&permissions=0&scope=bot")
-    
+ 
+@bot.command()
+async def nsfw(ctx):
+    """TRUST ME WITH THIS"""
+    await ctx.send ("Well... Here ya go! https://xvide.... wait a sec... :thinking: WHAT ARE YOU DOING WITH ME? EWWWWW! GET THAT OUTTA HERE!
+   
     
 @bot.command()
 async def upvote(ctx):
