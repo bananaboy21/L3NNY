@@ -48,17 +48,13 @@ async def on_guild_remove(guild):
     await lol.send(embed=em)
 
 
-
 @bot.command()
-async def support():
-    """Join my support server!"""
-    color = ''.join([random.choice('0123456789ABCDEF') for x in range(6)])
-    color = int(color, 16)
-    embed=discord.Embed(title=":tada: Join the Development! :tada:", colour = discord.Colour(value=color))
-    embed.add_field(name = "Dev Server: ", value = 'https://discord.gg/zzzJAKM')
-    embed.add_field(name = "Why Join?", value = "So you can help us suggest improvements, help code, and give us some advise!")
-    embed.set_footer(text = "Don't Forget to Upvote me!")
-    await bot.say(embed = embed)
+async def support(ctx):
+    """Gives you a websocket latency."""
+    color = discord.Color(value=0xffffff)
+    em = discord.Embed(color=color, title='Thanks for the interest! Link:')
+    em.description = f"https://discord.gg/zzzJAKM"
+    await ctx.send(embed=em)
 
 @bot.command()
 async def ping(ctx):
