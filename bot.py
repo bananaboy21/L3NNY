@@ -61,7 +61,7 @@ async def invite(ctx):
 @bot.command()
 async def nsfw(ctx):
     """TRUST ME WITH THIS"""
-    await ctx.send ("Well... Here ya go! https://xvide.... wait a sec... :thinking: WHAT ARE YOU DOING WITH ME? EWWWWW! GET THAT OUTTA HERE!
+    await ctx.send ("Well... Here ya go! https://xvide.... wait a sec... :thinking: WHAT ARE YOU DOING WITH ME? EWWWWW! GET THAT OUTTA HERE!")
    
     
 @bot.command()
