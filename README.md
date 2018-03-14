@@ -1,4 +1,4 @@
-<h1 align="center">Subaru</h1>
+<h1 align="center">L3NNY</h1>
 <div align="center">
 	<!-- I got addicted to these things -->
 	<a href="https://discordbots.org/bot/383258557598007296"><img src="https://discordbots.org/api/widget/status/383258557598007296.svg?noavatar=true" alt="status"/></a>
