@@ -1,1 +1,7 @@
-https://img.shields.io/badge/L3NNY--blue.svg
+                                                           
+
+                                                             L3NNY
+
+
+A discord bot able to handle your discord server.
+
