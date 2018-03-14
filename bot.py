@@ -16,6 +16,13 @@ from discord.ext import commands
 import json
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="TheEmperor™'s Discord bot.\n\nHelp Commands",owner_id=250674147980607488)
 
+
+@bot.event
+async def on_ready():
+    print('Bot is online, and ready to ROLL!')
+    await bot.change_presence(game=discord.Game(name="_help"))
+
+
 @bot.event
 async def on_guild_join(guild):
     lol = bot.get_channel(417460269313425409)
