@@ -18,6 +18,10 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="T
 
 
 
+@bot.event
+async def on_ready():
+    print('Bot is online, and ready to ROLL!')
+    await client.change_presence(game=discord.Game(name='_help'))
 
 
 @bot.event
