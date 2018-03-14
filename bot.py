@@ -19,12 +19,6 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('_'),description="T
 
 
 @bot.event
-async def on_ready():
-    print('Bot is online, and ready to ROLL!')
-    await client.change_presence(game=discord.Game(name='_help'))
-
-
-@bot.event
 async def on_guild_join(guild):
     lol = bot.get_channel(417460269313425409)
     em = discord.Embed(color=discord.Color(value=0xffffff))
