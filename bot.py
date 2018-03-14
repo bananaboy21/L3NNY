@@ -38,8 +38,8 @@ async def on_guild_remove(guild):
 async def support(ctx):
     """Gives you a websocket latency."""
     color = discord.Color(value=0xffffff)
-    em = discord.Embed(color=color, title='Thanks for the interest! Link:')
-    em.description = f"https://discord.gg/zzzJAKM"
+    em = discord.Embed(color=color, title='Help out in the development!')
+    em.description = f"Link: https://discord.gg/zzzJAKM"
     await ctx.send(embed=em)
 
 @bot.command()
